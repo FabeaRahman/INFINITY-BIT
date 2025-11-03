@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কমিউনিটি হেলথ ম্যাপ</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; }
+    header { background:#1976d2; color:white; padding:16px; text-align:center;}
+    main { max-width:1000px; margin:20px auto; padding:0 16px; }
+    h2 { text-align:center; }
+    #map { height:500px; width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2); margin-top:16px; }
+    .legend { margin-top:12px; background:white; padding:10px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+    .legend div { margin-bottom:4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>কমিউনিটি হেলথ ম্যাপ 🗺️</h1>
+  <nav>
+    <a href="index.html" style="color:white; text-decoration:none; margin-right:10px;">হোম</a>
+    <a href="point-map.html" style="color:white; text-decoration:none;">ফিরে যান</a>
+  </nav>
+</header>
+
+<main>
+  <h2>আপনার এলাকার স্বাস্থ্যসেবা প্রতিষ্ঠান</h2>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div>🏥 হাসপাতাল</div>
+    <div>🏥 ক্লিনিক</div>
+    <div>💊 ফার্মেসি</div>
+    <div>🧪 ডায়াগনস্টিক সেন্টার</div>
+  </div>
+</main>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Initialize the map
+  const map = L.map('map').setView([23.8103, 90.4125], 12); // Dhaka coordinates example
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // Sample health facilities
+  const facilities = [
+    {name: "হাসপাতাল A", type:"hospital", coords:[23.815, 90.420]},
+    {name: "ক্লিনিক B", type:"clinic", coords:[23.810, 90.410]},
+    {name: "ফার্মেসি C", type:"pharmacy", coords:[23.805, 90.415]},
+    {name: "ডায়াগনস্টিক D", type:"diagnostic", coords:[23.812, 90.405]}
+  ];
+
+  // Add markers to map
+  facilities.forEach(fac => {
+    let iconEmoji = "🏥";
+    if(fac.type==="clinic") iconEmoji="🏥";
+    if(fac.type==="pharmacy") iconEmoji="💊";
+    if(fac.type==="diagnostic") iconEmoji="🧪";
+
+    L.marker(fac.coords)
+      .addTo(map)
+      .bindPopup(`<b>${fac.name}</b><br>${iconEmoji}`);
+  });
+</script>
+
+</body>
+</html>
