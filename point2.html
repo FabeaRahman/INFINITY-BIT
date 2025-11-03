@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>২. ডায়েট ও পুষ্টি ট্র্যাকার</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; background:#f0f4f8; margin:0; padding:0; }
+    header { background:#2196f3; color:white; padding:16px; text-align:center; }
+    header nav a { color:white; margin:0 12px; text-decoration:none; font-weight:500; }
+    main { max-width:700px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h1,h2 { margin-top:0; }
+    .tracker-section, .tips-section { margin-top:20px; }
+    .tracker-section label { display:block; margin:8px 0 4px; font-weight:500; }
+    .tracker-section input, .tracker-section select, .tracker-section textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:12px; }
+    button { background:#1976d2; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#0d47a1; }
+    .tips-section ul { list-style:disc; padding-left:20px; }
+    .tips-section ul li { margin-bottom:8px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>২. ডায়েট ও পুষ্টি ট্র্যাকার</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="map.html">কমিউনিটি হেলথ ম্যাপ</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ================= Diet Tracker Section ================= -->
+  <section class="tracker-section">
+    <h2>আপনার দৈনন্দিন খাবারের ট্র্যাক</h2>
+    <form>
+      <label>১. আজ আপনি কোন খাবারগুলো খেলেন? 🍎🍞🥗</label>
+      <textarea rows="3" placeholder="ভাত, ডাল, সবজি, ফল ইত্যাদি লিখুন"></textarea>
+
+      <label>২. খাবারের পরিমাণ কত ছিল? 🥄</label>
+      <select>
+        <option>ছোট পরিমাণ</option>
+        <option>মাঝারি পরিমাণ</option>
+        <option>বড় পরিমাণ</option>
+      </select>
+
+      <label>৩. কখন খাবারটি খেলেন? ⏰</label>
+      <input type="time">
+
+      <button type="submit">সংরক্ষণ করুন 💾</button>
+    </form>
+  </section>
+
+  <!-- ================= Health Tips Section ================= -->
+  <section class="tips-section">
+    <h2>পুষ্টি ও স্বাস্থ্য টিপস 🥗</h2>
+    <ul>
+      <li>প্রতিদিন পর্যাপ্ত পানি পান করুন 💧</li>
+      <li>ফল, সবজি, প্রোটিন ও স্বাস্থ্যকর চর্বি অন্তর্ভুক্ত করুন 🥦🍳🥑</li>
+      <li>ফাস্টফুড কম খান 🚫🍟</li>
+      <li>নিয়মিত হালকা ব্যায়াম করুন 🏃‍♂️</li>
+      <li>খাবার নিয়মিত সময়ে খান ⏰</li>
+      <li>রাতে বেশি খাওয়া এড়িয়ে চলুন 🌙</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+</body>
+</html>
