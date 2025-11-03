@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৪. জরুরি সাহায্য</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; background:#f0f4f8; margin:0; padding:0;}
+    header { background:#d32f2f; color:white; padding:16px; text-align:center; }
+    header nav a { color:white; margin:0 12px; text-decoration:none; font-weight:500; }
+    main { max-width:700px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h1,h2 { margin-top:0; }
+    section { margin-top:20px; }
+    label { display:block; margin:8px 0 4px; font-weight:500; }
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:12px; }
+    input[type=checkbox] { width:auto; margin-right:8px; }
+    button { background:#c62828; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#8e0000; }
+    .tips-section ul { list-style:disc; padding-left:20px; }
+    .tips-section ul li { margin-bottom:8px; }
+    .status-tracker p { background:#ffe0e0; padding:8px; border-radius:6px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>জরুরি সাহায্য</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="map.html">কমিউনিটি হেলথ ম্যাপ</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ================= Emergency Type ================= -->
+  <section>
+    <h2>১. Emergency Type</h2>
+    <select>
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="mental">Mental Health Crisis 😔</option>
+      <option value="physical">Physical Injury / Accident 🩹</option>
+      <option value="urgent-medical">Urgent Medical Help 🏥</option>
+      <option value="medicine">Medicine / Drug Issue 💊</option>
+      <option value="other">Others / General Help 🆘</option>
+    </select>
+  </section>
+
+  <!-- ================= Symptoms / Situation ================= -->
+  <section>
+    <h2>২. Symptoms / Situation</h2>
+    <textarea rows="3" placeholder="কী সমস্যা হচ্ছে লিখুন..."></textarea>
+    <label>Severity Level (1-5)</label>
+    <select>
+      <option>1 - কম</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5 - গুরুতর</option>
+    </select>
+  </section>
+
+  <!-- ================= Personal Info (Optional) ================= -->
+  <section>
+    <h2>৩. Personal Info (Optional)</h2>
+    <input type="text" placeholder="নাম">
+    <input type="text" placeholder="Contact (Phone/Email)">
+    <input type="text" placeholder="Location">
+  </section>
+
+  <!-- ================= Immediate Actions ================= -->
+  <section>
+    <h2>৪. Immediate Actions</h2>
+    <label><input type="checkbox"> Contacted family/friend</label>
+    <label><input type="checkbox"> Contacted hospital / clinic</label>
+    <label><input type="checkbox"> Taken first aid / medicine</label>
+  </section>
+
+  <!-- ================= Submit Button ================= -->
+  <section>
+    <button type="submit">Submit Emergency Request 🆘</button>
+  </section>
+
+  <!-- ================= Status Tracker ================= -->
+  <section class="status-tracker">
+    <h2>৫. Status Tracker</h2>
+    <p>Pending / In Progress / Completed</p>
+  </section>
+
+  <!-- ================= Health Tips ================= -->
+  <section class="tips-section">
+    <h2>Emergency Health Tips ⚠️</h2>
+    <ul>
+      <li>যদি গুরুতর শারীরিক সমস্যা হয়, অবিলম্বে নিকটস্থ হাসপাতালে যান 🏥</li>
+      <li>সাইকোলজিক্যাল ক্রাইসিসে শান্ত থাকুন, শ্বাস-প্রশ্বাস নিয়ন্ত্রণ করুন 😌</li>
+      <li>কোনও ওষুধ নেওয়ার আগে পেশাদার পরামর্শ নিন 💊</li>
+      <li>যদি সম্ভব হয় trusted ব্যক্তির সাহায্য নিন 👨‍👩‍👧‍👦</li>
+      <li>অনলাইন বা ফোনের মাধ্যমে জরুরি হেল্পলাইনের সাথে যোগাযোগ করুন ☎️</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+</body>
+</html>
