@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মাতৃ ও শিশু স্বাস্থ্য Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; color:#333; }
+    header { background:#1976d2; color:white; padding:16px; text-align:center;}
+    header nav a { color:white; margin:0 10px; text-decoration:none; }
+    main { max-width:700px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h2 { margin-top:0; }
+    label { display:block; margin:8px 0 4px; font-weight:500; }
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:10px; }
+    button { background:#1976d2; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#0d47a1; }
+    .tracker-card { margin-top:20px; padding:12px; background:#e3f2fd; border-radius:8px; }
+    .tracker-card div { margin-bottom:8px; }
+    .vaccine-list label { display:block; margin:4px 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>মাতৃ ও শিশু স্বাস্থ্য Tracker 🤰🍼</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="point3.html">ফিরে যান</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <p>গর্ভকালীন স্বাস্থ্য ও শিশুর টিকা ট্র্যাক করুন। প্রতিদিনের লক্ষণ, টিকা এবং স্বাস্থ্য তথ্য লিখে রাখুন।</p>
+  </section>
+
+  <!-- ================= Pregnancy Tracker ================= -->
+  <section class="tracker-card">
+    <h2>গর্ভকালীন সপ্তাহ 🗓️</h2>
+    <form id="maternalForm">
+      <label>বর্তমান গর্ভকালীন সপ্তাহ:</label>
+      <input type="number" id="pregnancyWeek" placeholder="সপ্তাহ লিখুন" min="1" max="40">
+
+      <label>টিকা (যদি প্রয়োজন):</label>
+      <div class="vaccine-list">
+        <label><input type="checkbox" value="tt1"> TT1 💉</label>
+        <label><input type="checkbox" value="tt2"> TT2 💉</label>
+        <label><input type="checkbox" value="tt_booster"> TT Booster 💉</label>
+      </div>
+
+      <label>আজকের স্বাস্থ্য লক্ষণ লিখুন:</label>
+      <textarea id="symptoms" rows="3" placeholder="মাথা ব্যথা, বুক ব্যথা ইত্যাদি লিখুন..."></textarea>
+
+      <label>শিশুর স্বাস্থ্য বা মনিটরিং নোট:</label>
+      <textarea id="babyNotes" rows="3" placeholder="শিশুর কার্যক্রম, হার্টবিট ইত্যাদি লিখুন..."></textarea>
+
+      <button type="button" onclick="saveMaternalData()">সেভ করুন 💾</button>
+    </form>
+
+    <div class="tracker-result" id="trackerResult">
+      <div>আপনি এখনো কোনো তথ্য সংরক্ষণ করেননি।</div>
+    </div>
+  </section>
+</main>
+
+<footer style="text-align:center; padding:12px; background:#1976d2; color:white;">
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+<script>
+function saveMaternalData() {
+  const week = document.getElementById('pregnancyWeek').value;
+  const symptoms = document.getElementById('symptoms').value;
+  const babyNotes = document.getElementById('babyNotes').value;
+
+  const vaccines = [];
+  document.querySelectorAll('.vaccine-list input:checked').forEach(item => {
+    vaccines.push(item.value);
+  });
+
+  document.getElementById('trackerResult').innerHTML = `
+    <div>🤰 গর্ভকালীন সপ্তাহ: ${week}</div>
+    <div>💉 নেওয়া টিকা: ${vaccines.length > 0 ? vaccines.join(', ') : 'কোনো টিকা নেওয়া হয়নি'}</div>
+    <div>📝 আজকের লক্ষণ: ${symptoms || 'কোনো তথ্য নেই'}</div>
+    <div>👶 শিশুর নোট: ${babyNotes || 'কোনো তথ্য নেই'}</div>
+  `;
+}
+</script>
+
+</body>
+</html>
