@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>স্বাস্থ্য পরীক্ষা ও চেকআপ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; background:#f0f4f8; margin:0; padding:0; }
+    header { background:#0263d1; color:white; padding:16px; text-align:center; }
+    nav a { color:white; margin:0 12px; text-decoration:none; font-weight:500; }
+    main { max-width:700px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h1,h2 { margin-top:0; }
+    section { margin-top:20px; }
+    label { display:block; margin:8px 0 4px; font-weight:500; }
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:12px; }
+    button { background:#0277bd; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#014c8c; }
+    .tips-section ul { list-style:disc; padding-left:20px; }
+    .tips-section ul li { margin-bottom:8px; }
+    .checkup-history { background:#e1f5fe; padding:10px; border-radius:6px; margin-bottom:12px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>স্বাস্থ্য পরীক্ষা ও চেকআপ</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="map.html">কমিউনিটি হেলথ ম্যাপ</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ================= Health Checkup Form ================= -->
+  <section>
+    <h2>১. নতুন চেকআপ রেকর্ড করুন</h2>
+    <label>চেকআপ ধরন</label>
+    <select>
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="blood">Blood Test</option>
+      <option value="blood-pressure">Blood Pressure Check</option>
+      <option value="sugar">Sugar Test</option>
+      <option value="eye">Eye Checkup</option>
+      <option value="general">General Health Checkup</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label>চেকআপের তারিখ</label>
+    <input type="date">
+
+    <label>চেকআপের ফলাফল (Optional)</label>
+    <textarea rows="3" placeholder="ফলাফল লিখুন..."></textarea>
+
+    <label>পরবর্তী চেকআপের তারিখ</label>
+    <input type="date">
+
+    <button>সংরক্ষণ করুন 💾</button>
+  </section>
+
+  <!-- ================= Checkup History ================= -->
+  <section>
+    <h2>২. সাম্প্রতিক চেকআপ</h2>
+    <div class="checkup-history">
+      <strong>Blood Pressure Check:</strong> ১৫/০৯/২০২৫ - স্বাভাবিক ✅
+    </div>
+    <div class="checkup-history">
+      <strong>Blood Test:</strong> ১০/০৯/২০২৫ - Cholesterol high ⚠️
+    </div>
+    <div class="checkup-history">
+      <strong>Eye Checkup:</strong> ০৫/০৯/২০২৫ - Normal ✅
+    </div>
+  </section>
+
+  <!-- ================= Health Tips ================= -->
+  <section class="tips-section">
+    <h2>স্বাস্থ্য টিপস 🩺</h2>
+    <ul>
+      <li>নিয়মিত checkup করুন, বিশেষ করে রক্তচাপ ও শর্করা পরীক্ষা</li>
+      <li>পর্যাপ্ত পানি পান করুন এবং সুষম আহার করুন 💧🥗</li>
+      <li>চিকিৎসকের পরামর্শ ছাড়া ওষুধ ব্যবহার করবেন না 💊</li>
+      <li>শারীরিক ব্যায়াম ও পর্যাপ্ত বিশ্রাম নিশ্চিত করুন 🏃‍♂️😴</li>
+      <li>নিয়মিত নিজের health records update করুন 📝</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+</body>
+</html>
