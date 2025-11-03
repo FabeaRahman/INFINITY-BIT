@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মানসিক স্বাস্থ্য প্রশ্নাবলী</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .question-section { max-width:600px; margin:20px auto; padding:16px; background:#e3f2fd; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08);}
+    .question { margin-bottom:16px; }
+    .question label { display:block; margin-bottom:6px; font-weight:500; }
+    .question input, .question select, .question textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    button.submit-btn { background:#1976d2; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button.submit-btn:hover { background:#0d47a1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>মানসিক স্বাস্থ্য প্রশ্নাবলী</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="point1.html">ফিরে যান</a>
+  </nav>
+</header>
+
+<main>
+  <section class="question-section">
+    <form>
+      <div class="question">
+        <label>১. আজ আপনার মেজাজ কেমন ছিল?</label>
+        <select>
+          <option>খুব ভালো 😄</option>
+          <option>ভালো 🙂</option>
+          <option>মোটামুটি 😐</option>
+          <option>খারাপ 🙁</option>
+          <option>খুব খারাপ 😢</option>
+        </select>
+      </div>
+      <div class="question">
+        <label>২. আপনি কি পর্যাপ্ত ঘুম পেয়েছেন?</label>
+        <select>
+          <option>হ্যাঁ ✅</option>
+          <option>না ❌</option>
+        </select>
+      </div>
+      <div class="question">
+        <label>৩. আজকের জন্য আপনার কোন ব্যক্তিগত লক্ষ্য আছে কি?</label>
+        <textarea rows="3" placeholder="লক্ষ্য লিখুন... ✍️"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">জমা দিন 📤</button>
+    </form>
+  </section>
+</main>
+<footer>
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+</body>
+</html>
