@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MonBondhu (TAT) - Mental Health Support for Rural Bangladesh">
+    <meta name="theme-color" content="#4CAF50">
+    <title>মনবন্ধু (TAT) - Mental Health Support</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/favicon.ico">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bangla font -->
+    <link href="INFINITYBIT.css" rel="stylesheet">
+</head>
+<body>
+    <!-- App Shell -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                
+                <h1>🩺 স্বাস্থ্য সেবা (Health Service)</h1>
+            </div>
+            <button id="menuToggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Side Navigation -->
+        <nav class="side-nav">
+            <div class="user-profile">
+                <div class="profile-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <p>স্বাগতম</p>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-page="home"><i class="fas fa-home"></i> হোম</li>
+                <li data-page="mood-check"><i class="fas fa-smile"></i> মানসিক স্বাস্থ্য চেক-ইন</li>
+                <li data-page="health-map"><i class="fas fa-map-marker-alt"></i> স্বাস্থ্যসেবা মানচিত্র</li>
+                <li data-page="help-request"><i class="fas fa-hands-helping"></i> সাহায্য অনুরোধ</li>
+                <li data-page="health-tips"><i class="fas fa-lightbulb"></i> মৌসুমি স্বাস্থ্য টিপস</li>
+                <li data-page="maternal-health"><i class="fas fa-baby"></i> মা ও শিশু স্বাস্থ্য</li>
+                <li data-page="symptom-guide"><i class="fas fa-stethoscope"></i> উপসর্গ গাইড</li>
+                <li data-page="health-events"><i class="fas fa-calendar-alt"></i> স্বাস্থ্য ইভেন্টস</li>
+                <li data-page="worker-directory"><i class="fas fa-users"></i> স্বাস্থ্যকর্মী ডিরেক্টরি</li>
+                <li data-page="data-export"><i class="fas fa-file-export"></i> তথ্য রপ্তানি</li>
+                <li data-page="health-videos"><i class="fas fa-video"></i> স্বাস্থ্য শিক্ষা ভিডিও</li>
+                <li data-page="settings"><i class="fas fa-cog"></i> সেটিংস</li>
+            </ul>
+            <div class="offline-status">
+                <span id="connectionStatus"><i class="fas fa-wifi"></i> অনলাইন</span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="welcome-banner">
+                    <h2>আপনার মানসিক স্বাস্থ্যের বন্ধু</h2>
+                    <p>আপনার স্বাস্থ্য সম্পর্কিত সমস্ত প্রয়োজনীয়তা একটি অ্যাপে</p>
+                </div>
+                
+                <div class="quick-actions">
+                    <div class="action-card" data-page="mood-check">
+                        <i class="fas fa-smile"></i>
+                        <h3>আজকের মেজাজ</h3>
+                    </div>
+                    <div class="action-card" data-page="health-map">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>নিকটবর্তী সেবা</h3>
+                    </div>
+                    <div class="action-card" data-page="help-request">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>সাহায্য চাই</h3>
+                    </div>
+                    <div class="action-card" data-page="health-tips">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>স্বাস্থ্য টিপস</h3>
+                    </div>
+                </div>
+                
+                <div class="emergency-section">
+                    <h3>জরুরি সাহায্য</h3>
+                    <div class="emergency-contacts">
+                        <a href="tel:999" class="emergency-btn">
+                            <i class="fas fa-phone"></i> 999 - জরুরি সেবা
+                        </a>
+                        <a href="tel:16263" class="emergency-btn">
+                            <i class="fas fa-phone"></i> 16263 - স্বাস্থ্য সেবা
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mental Health Check-In -->
+            <section id="mood-check" class="page">
+                <h2>মানসিক স্বাস্থ্য চেক-ইন</h2>
+                <p class="section-desc">আজ আপনার মেজাজ কেমন? নিচের যেকোনো একটি অপশন নির্বাচন করুন।</p>
+                
+                <div class="mood-container">
+                    <div class="mood-option" data-mood="great">
+                        <i class="fas fa-laugh-beam"></i>
+                        <span>খুব ভালো</span>
+                    </div>
+                    <div class="mood-option" data-mood="good">
+                        <i class="fas fa-smile"></i>
+                        <span>ভালো</span>
+                    </div>
+                    <div class="mood-option" data-mood="okay">
+                        <i class="fas fa-meh"></i>
+                        <span>মোটামুটি</span>
+                    </div>
+                    <div class="mood-option" data-mood="sad">
+                        <i class="fas fa-frown"></i>
+                        <span>মন খারাপ</span>
+                    </div>
+                    <div class="mood-option" data-mood="bad">
+                        <i class="fas fa-sad-tear"></i>
+                        <span>খুব খারাপ</span>
+                    </div>
+                </div>
+                
+                <div class="mood-notes">
+                    <h3>আপনার অনুভূতি সম্পর্কে আরও বলুন (ঐচ্ছিক)</h3>
+                    <textarea id="moodNotes" placeholder="আপনার অনুভূতি সম্পর্কে কিছু লিখুন..."></textarea>
+                    <button id="saveMood" class="primary-btn">সংরক্ষণ করুন</button>
+                </div>
+                
+                <div class="mood-history">
+                    <h3>আপনার মেজাজের ইতিহাস</h3>
+                    <div id="moodChart" class="mood-chart">
+                        <!-- Chart will be rendered here by JavaScript -->
+                    </div>
+                    <div id="moodEntries" class="mood-entries">
+                        <!-- Past entries will be listed here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Health Map -->
+            <section id="health-map" class="page">
+                <h2>স্বাস্থ্যসেবা মানচিত্র</h2>
+                <p class="section-desc">আপনার নিকটবর্তী স্বাস্থ্যসেবা কেন্দ্র খুঁজুন</p>
+                
+                <div class="search-container">
+                    <input type="text" id="locationSearch" placeholder="আপনার এলাকা লিখুন...">
+                    <button id="findNearby" class="primary-btn">খুঁজুন</button>
+                    <button id="useGPS" class="secondary-btn"><i class="fas fa-map-marker-alt"></i> বর্তমান অবস্থান ব্যবহার করুন</button>
+                </div>
+                
+                <div class="facility-filters">
+                    <button class="filter-btn active" data-filter="all">সব</button>
+                    <button class="filter-btn" data-filter="hospital">হাসপাতাল</button>
+                    <button class="filter-btn" data-filter="clinic">ক্লিনিক</button>
+                    <button class="filter-btn" data-filter="pharmacy">ফার্মেসি</button>
+                    <button class="filter-btn" data-filter="chw">স্বাস্থ্যকর্মী</button>
+                </div>
+                
+                <div id="mapContainer" class="map-container">
+                    <!-- Map will be rendered here by JavaScript -->
+                </div>
+                
+                <div id="facilityList" class="facility-list">
+                    <!-- Facility list will be populated here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Anonymous Help Request -->
+            <section id="help-request" class="page">
+                <h2>সাহায্য অনুরোধ</h2>
+                <p class="section-desc">আপনার পরিচয় গোপন রেখে সাহায্য চাইতে পারেন</p>
+                
+                <div class="help-request-form">
+                    <div class="form-group">
+                        <label for="helpType">কী ধরনের সাহায্য প্রয়োজন?</label>
+                        <select id="helpType">
+                            <option value="">নির্বাচন করুন</option>
+                            <option value="talk">কারো সাথে কথা বলতে চাই</option>
+                            <option value="counseling">পরামর্শ প্রয়োজন</option>
+                            <option value="emergency">জরুরি সাহায্য প্রয়োজন</option>
+                            <option value="information">তথ্য প্রয়োজন</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="helpMessage">আপনার সমস্যা বর্ণনা করুন</label>
+                        <textarea id="helpMessage" placeholder="আপনার সমস্যা সম্পর্কে বিস্তারিত লিখুন..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>যোগাযোগের মাধ্যম (ঐচ্ছিক)</label>
+                        <input type="text" id="contactMethod" placeholder="ফোন নম্বর বা ইমেইল (ঐচ্ছিক)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="anonymousRequest" checked>
+                            <span>আমার পরিচয় গোপন রাখুন</span>
+                        </label>
+                    </div>
+                    
+                    <button id="submitHelp" class="primary-btn">সাহায্য অনুরোধ পাঠান</button>
+                </div>
+                
+                <div class="help-status">
+                    <h3>আপনার অনুরোধের অবস্থা</h3>
+                    <div id="requestStatus" class="request-status">
+                        <!-- Request status will be shown here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seasonal Health Tips -->
+            <section id="health-tips" class="page">
+                <h2>মৌসুমি স্বাস্থ্য টিপস</h2>
+                <p class="section-desc">বর্তমান মৌসুম অনুযায়ী স্বাস্থ্য সম্পর্কিত পরামর্শ</p>
+                
+                <div class="season-selector">
+                    <button class="season-btn active" data-season="current">বর্তমান মৌসুম</button>
+                    <button class="season-btn" data-season="summer">গ্রীষ্মকাল</button>
+                    <button class="season-btn" data-season="monsoon">বর্ষাকাল</button>
+                    <button class="season-btn" data-season="winter">শীতকাল</button>
+                </div>
+                
+                <div id="seasonalTips" class="seasonal-tips">
+                    <!-- Seasonal tips will be populated here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Maternal & Child Health Tracker -->
+            <section id="maternal-health" class="page">
+                <h2>মা ও শিশু স্বাস্থ্য</h2>
+                <p class="section-desc">গর্ভাবস্থা এবং শিশুর টিকা ট্র্যাকিং</p>
+                
+                <div class="tracker-tabs">
+                    <button class="tab-btn active" data-tab="pregnancy">গর্ভাবস্থা</button>
+                    <button class="tab-btn" data-tab="child">শিশু টিকা</button>
+                </div>
+                
+                <div id="pregnancyTracker" class="tracker-content active">
+                    <div class="form-group">
+                        <label for="dueDate">সম্ভাব্য প্রসবের তারিখ</label>
+                        <input type="date" id="dueDate">
+                    </div>
+                    
+                    <button id="calculatePregnancy" class="primary-btn">হিসাব করুন</button>
+                    
+                    <div id="pregnancyInfo" class="pregnancy-info">
+                        <!-- Pregnancy information will be shown here by JavaScript -->
+                    </div>
+                    
+                    <div id="checkupReminders" class="checkup-reminders">
+                        <h3>পরীক্ষার সময়সূচী</h3>
+                        <!-- Checkup schedule will be shown here by JavaScript -->
+                    </div>
+                </div>
+                
+                <div id="childTracker" class="tracker-content">
+                    <div class="form-group">
+                        <label for="childDOB">শিশুর জন্ম তারিখ</label>
+                        <input type="date" id="childDOB">
+                    </div>
+                    
+                    <button id="calculateVaccine" class="primary-btn">টিকার সময়সূচী দেখুন</button>
+                    
+                    <div id="vaccineSchedule" class="vaccine-schedule">
+                        <!-- Vaccine schedule will be shown here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Symptom Awareness Guide -->
+            <section id="symptom-guide" class="page">
+                <h2>উপসর্গ গাইড</h2>
+                <p class="section-desc">বিভিন্ন রোগের উপসর্গ সম্পর্কে জানুন</p>
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>এই তথ্য চিকিৎসকের পরামর্শের বিকল্প নয়। জরুরি অবস্থায় অবশ্যই চিকিৎসকের পরামর্শ নিন।</p>
+                </div>
+                
+                <div class="symptom-search">
+                    <input type="text" id="symptomSearch" placeholder="উপসর্গ খুঁজুন...">
+                </div>
+                
+                <div class="symptom-categories">
+                    <button class="category-btn active" data-category="all">সব</button>
+                    <button class="category-btn" data-category="fever">জ্বর</button>
+                    <button class="category-btn" data-category="pain">ব্যথা</button>
+                    <button class="category-btn" data-category="stomach">পেট সমস্যা</button>
+                    <button class="category-btn" data-category="respiratory">শ্বাস-প্রশ্বাস</button>
+                    <button class="category-btn" data-category="skin">ত্বক</button>
+                    <button class="category-btn" data-category="emergency">জরুরি</button>
+                </div>
+                
+                <div id="symptomList" class="symptom-list">
+                    <!-- Symptoms will be listed here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Community Health Events -->
+            <section id="health-events" class="page">
+                <h2>স্বাস্থ্য ইভেন্টস</h2>
+                <p class="section-desc">আপনার এলাকায় আসন্ন স্বাস্থ্য সম্পর্কিত ইভেন্টস</p>
+                
+                <div class="event-filters">
+                    <button class="filter-btn active" data-filter="all">সব</button>
+                    <button class="filter-btn" data-filter="camp">মেডিকেল ক্যাম্প</button>
+                    <button class="filter-btn" data-filter="blood">রক্তদান</button>
+                    <button class="filter-btn" data-filter="awareness">সচেতনতা কর্মসূচি</button>
+                    <button class="filter-btn" data-filter="vaccination">টিকাদান</button>
+                </div>
+                
+                <div id="eventsList" class="events-list">
+                    <!-- Events will be listed here by JavaScript -->
+                </div>
+                
+                <div class="add-event">
+                    <button id="addEvent" class="primary-btn">নতুন ইভেন্ট যোগ করুন</button>
+                </div>
+            </section>
+
+            <!-- Volunteer Health Worker Directory -->
+            <section id="worker-directory" class="page">
+                <h2>স্বাস্থ্যকর্মী ডিরেক্টরি</h2>
+                <p class="section-desc">আপনার এলাকার প্রশিক্ষিত স্বাস্থ্যকর্মীদের তালিকা</p>
+                
+                <div class="worker-search">
+                    <input type="text" id="workerSearch" placeholder="নাম বা এলাকা দিয়ে খুঁজুন...">
+                </div>
+                
+                <div class="worker-filters">
+                    <button class="filter-btn active" data-filter="all">সব</button>
+                    <button class="filter-btn" data-filter="firstaid">প্রাথমিক চিকিৎসা</button>
+                    <button class="filter-btn" data-filter="maternal">মাতৃ স্বাস্থ্য</button>
+                    <button class="filter-btn" data-filter="mental">মানসিক স্বাস্থ্য</button>
+                </div>
+                
+                <div id="workersList" class="workers-list">
+                    <!-- Workers will be listed here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Health Data Export -->
+            <section id="data-export" class="page">
+                <h2>তথ্য রপ্তানি</h2>
+                <p class="section-desc">সামগ্রিক স্বাস্থ্য তথ্য বিশ্লেষণের জন্য</p>
+                
+                <div id="exportOptionsContainer" class="export-container">
+                    <div class="export-disclaimer">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>শুধুমাত্র সামগ্রিক তথ্য রপ্তানি করা হবে। ব্যক্তিগত তথ্য রপ্তানি করা হবে না।</p>
+                    </div>
+                    
+                    <div class="export-section">
+                        <h3>রপ্তানির ধরন নির্বাচন করুন</h3>
+                        <div class="export-type-buttons">
+                            <button class="btn export-type-btn active" data-type="mood-stats">
+                                <i class="fas fa-smile"></i> মানসিক স্বাস্থ্য পরিসংখ্যান
+                            </button>
+                            <button class="btn export-type-btn" data-type="help-requests">
+                                <i class="fas fa-hands-helping"></i> সাহায্য অনুরোধ পরিসংখ্যান
+                            </button>
+                            <button class="btn export-type-btn" data-type="maternal-child">
+                                <i class="fas fa-baby"></i> মাতৃ ও শিশু স্বাস্থ্য পরিসংখ্যান
+                            </button>
+                            <button class="btn export-type-btn" data-type="symptom-trends">
+                                <i class="fas fa-chart-line"></i> লক্ষণ প্রবণতা
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="export-section">
+                        <h3>সময়কাল নির্বাচন করুন</h3>
+                        <div class="form-group">
+                            <select id="dateRangeSelect" class="form-control">
+                                <option value="last-week">গত সপ্তাহ</option>
+                                <option value="last-month" selected>গত মাস</option>
+                                <option value="last-3-months">গত ৩ মাস</option>
+                                <option value="last-6-months">গত ৬ মাস</option>
+                                <option value="last-year">গত বছর</option>
+                                <option value="all-time">সব সময়</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="export-section">
+                        <h3>ফাইল ফরম্যাট</h3>
+                        <div class="form-group">
+                            <select id="fileFormatSelect" class="form-control">
+                                <option value="csv">CSV</option>
+                                <option value="json">JSON</option>
+                                <option value="pdf">PDF</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="export-preview">
+                        <h3>প্রিভিউ</h3>
+                        <div id="exportPreviewContainer" class="export-preview-content">
+                            <div class="export-preview-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>রপ্তানির ধরন নির্বাচন করুন</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="export-actions">
+                        <button id="exportDataBtn" class="btn btn-primary">
+                            <i class="fas fa-file-export"></i> রপ্তানি করুন
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="exportPreview" class="export-preview">
+                    <!-- Export preview will be shown here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Health Education Videos (Innovation Feature) -->
+            <section id="health-videos" class="page">
+                <h2>স্বাস্থ্য শিক্ষা ভিডিও</h2>
+                <p class="section-desc">অফলাইনে দেখার জন্য স্বাস্থ্য সম্পর্কিত শিক্ষামূলক ভিডিও</p>
+                
+                <div class="video-categories">
+                    <button class="category-btn active" data-category="all">সব</button>
+                    <button class="category-btn" data-category="firstaid">প্রাথমিক চিকিৎসা</button>
+                    <button class="category-btn" data-category="maternal">মাতৃ স্বাস্থ্য</button>
+                    <button class="category-btn" data-category="nutrition">পুষ্টি</button>
+                    <button class="category-btn" data-category="mental">মানসিক স্বাস্থ্য</button>
+                </div>
+                
+                <div class="offline-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="offlineVideos">
+                        <span>শুধুমাত্র অফলাইন ভিডিও দেখান</span>
+                    </label>
+                </div>
+                
+                <div id="videosList" class="videos-list">
+                    <!-- Videos will be listed here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Settings Page -->
+            <section id="settings" class="page">
+                <h2>সেটিংস</h2>
+                
+                <div class="settings-group">
+                    <h3>ভাষা</h3>
+                    <div class="setting-option">
+                        <select id="languageSelect">
+                            <option value="bn">বাংলা</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <h3>ডাটা সেভিং</h3>
+                    <div class="setting-option">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="dataSaving">
+                            <span>ডাটা সেভিং মোড</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <h3>নোটিফিকেশন</h3>
+                    <div class="setting-option">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="notificationToggle" checked>
+                            <span>নোটিফিকেশন চালু রাখুন</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <h3>অফলাইন ব্যবহার</h3>
+                    <div class="setting-option">
+                        <button id="downloadOfflineData" class="secondary-btn">অফলাইন ডাটা ডাউনলোড করুন</button>
+                        <p class="storage-info">অফলাইন ডাটা সাইজ: <span id="offlineDataSize">0 MB</span></p>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <h3>অ্যাকাউন্ট</h3>
+                    <div class="setting-option">
+                        <button id="clearData" class="danger-btn">সমস্ত ডাটা মুছুন</button>
+                    </div>
+                </div>
+                
+                <div class="app-info">
+                    <p>মনবন্ধু (TAT) v1.0</p>
+                    <p>© 2023 ShasthoTech Bangladesh Limited</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>হোম</span>
+            </div>
+            <div class="nav-item" data-page="mood-check">
+                <i class="fas fa-smile"></i>
+                <span>মেজাজ</span>
+            </div>
+            <div class="nav-item" data-page="health-map">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>মানচিত্র</span>
+            </div>
+            <div class="nav-item" data-page="help-request">
+                <i class="fas fa-hands-helping"></i>
+                <span>সাহায্য</span>
+            </div>
+            <div class="nav-item" data-page="health-videos">
+                <i class="fas fa-video"></i>
+                <span>ভিডিও</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Offline Notification -->
+    <div id="offlineNotification" class="offline-notification">
+        <i class="fas fa-wifi"></i>
+        <span>আপনি অফলাইন মোডে আছেন</span>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>লোড হচ্ছে...</p>
+    </div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully');
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- App Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/mood-tracker.js"></script>
+    <script src="js/health-map.js"></script>
+    <script src="js/help-request.js"></script>
+    <script src="js/health-tips.js"></script>
+    <script src="js/maternal-health.js"></script>
+    <script src="js/symptom-guide.js"></script>
+    <script src="js/health-events.js"></script>
+    <script src="js/worker-directory.js"></script>
+    <script src="js/data-export.js"></script>
+    <script src="js/health-videos.js"></script>
+</body>
+</html>
