@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৩. নিয়মিত ব্যায়াম</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; color:#333;}
+    header { background:#1976d2; color:white; padding:16px; text-align:center;}
+    header nav a { color:white; margin:0 10px; text-decoration:none; }
+    main { max-width:800px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h2 { margin-top:0; }
+    section { margin-bottom:20px; }
+    label { display:block; margin:8px 0 4px; font-weight:500;}
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:10px; }
+    button { background:#1976d2; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#0d47a1; }
+    .tracker { margin-top:20px; padding:12px; background:#e3f2fd; border-radius:8px; }
+    .tracker div { margin-bottom:8px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>৩. নিয়মিত ব্যায়াম</h1>
+  <nav>
+    <a href="index.html">হোম</a>
+    <a href="map.html">কমিউনিটি হেলথ ম্যাপ</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <p>প্রতিদিন অন্তত ৩০ মিনিট হালকা থেকে মাঝারি ব্যায়াম করুন। হাঁটাহাঁটি, যোগব্যায়াম বা ব্যান্ড ব্যায়াম সহায়তা করতে পারে।</p>
+  </section>
+
+  <!-- ================= Exercise Tracker ================= -->
+  <section>
+    <h2>ব্যায়াম ট্র্যাকার 🏃‍♂️</h2>
+    <form id="exerciseForm">
+      <label>ব্যায়ামের ধরন:</label>
+      <select id="exerciseType">
+        <option value="walk">হাঁটা 🚶‍♂️</option>
+        <option value="run">দৌড় 🏃‍♀️</option>
+        <option value="yoga">যোগব্যায়াম 🧘‍♂️</option>
+        <option value="gym">জিম 🏋️‍♂️</option>
+      </select>
+
+      <label>সময় (মিনিটে) ⏱️:</label>
+      <input type="number" id="duration" placeholder="মিনিটে লিখুন" min="1">
+
+      <label>ওজন (kg) ⚖️:</label>
+      <input type="number" id="weight" placeholder="আপনার ওজন লিখুন" min="1">
+
+      <button type="button" onclick="calculateCalories()">ক্যালোরি হিসাব করুন 🔥</button>
+    </form>
+
+    <div class="tracker" id="trackerResult">
+      <div>আপনি এখনো কোনো হিসাব করেননি।</div>
+    </div>
+  </section>
+
+  <!-- ================= Simple Questions ================= -->
+  <section>
+    <h2>ছোট প্রশ্নাবলী ❓</h2>
+    <form>
+      <label>আজকের ব্যায়াম কত মিনিট করেছেন?</label>
+      <input type="number" placeholder="মিনিট লিখুন">
+
+      <label>আজ কি আপনি জল পর্যাপ্ত পরিমাণে পান করেছেন? 💧</label>
+      <select>
+        <option>হ্যাঁ ✅</option>
+        <option>না ❌</option>
+      </select>
+
+      <label>আজ আপনার শরীরের অবস্থা কেমন?</label>
+      <textarea rows="2" placeholder="আপনার অনুভূতি লিখুন..."></textarea>
+
+      <button type="submit">জমা দিন 📤</button>
+    </form>
+  </section>
+
+</main>
+
+<footer style="text-align:center; padding:12px; background:#1976d2; color:white;">
+  <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
+
+<script>
+function calculateCalories() {
+  const type = document.getElementById('exerciseType').value;
+  const duration = parseInt(document.getElementById('duration').value) || 0;
+  const weight = parseInt(document.getElementById('weight').value) || 0;
+
+  // ক্যালোরি হিসাব (প্রায়জন্য সূত্র)
+  let calPerMin = 0;
+  if(type === 'walk') calPerMin = 3.5;
+  if(type === 'run') calPerMin = 7;
+  if(type === 'yoga') calPerMin = 2.5;
+  if(type === 'gym') calPerMin = 6;
+
+  const calories = ((calPerMin * weight) / 60) * duration;
+
+  document.getElementById('trackerResult').innerHTML = `
+    <div>💪 ব্যায়ামের ধরন: ${type}</div>
+    <div>⏱️ সময়: ${duration} মিনিট</div>
+    <div>⚖️ ওজন: ${weight} কেজি</div>
+    <div>🔥 প্রায় ক্যালোরি খরচ: ${calories.toFixed(1)} kcal</div>
+  `;
+}
+</script>
+
+</body>
+</html>
