@@ -3,115 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>স্বাস্থ্যসেবা ওয়েবসাইট</title>
+  <title>৩. নিয়মিত ব্যায়াম</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; color:#333;}
+    header { background:#1976d2; color:white; padding:16px; text-align:center;}
+    header nav a { color:white; margin:0 10px; text-decoration:none; }
+    main { max-width:800px; margin:20px auto; padding:16px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h2 { margin-top:0; }
+    section { margin-bottom:20px; }
+    label { display:block; margin:8px 0 4px; font-weight:500;}
+    input, select, textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:10px; }
+    button { background:#1976d2; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#0d47a1; }
+    .tracker { margin-top:20px; padding:12px; background:#e3f2fd; border-radius:8px; }
+    .tracker div { margin-bottom:8px; }
+  </style>
 </head>
-
 <body>
 
+<header>
+  <h1>৩. নিয়মিত ব্যায়াম</h1>
   
-<!---  Header Section Start --->
-    <header>
-        <div class="logo">
-            <span>🏥</span>
-            <span>স্বাস্থ্য সেবা (Health Service)</span>
-        </div>
-        <nav>
-            <a href="#home">হোম</a>
-            <a href="#categories">সেবা</a>
-            <a href="#emergency">জরুরি</a>
-        </nav>
-         
-        <div class="menu-icon">☰</div>
-    </header>
+</header>
 
-    1
-<!---  Header Section End --->
+    
+<main><a href="index.html" style="
+  display:inline-block;
+  background:#1a96d9;
+  color:white;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+">
+  ফিরে যান
+</a>
+  <section>
+    <p>প্রতিদিন অন্তত ৩০ মিনিট হালকা থেকে মাঝারি ব্যায়াম করুন। হাঁটাহাঁটি, যোগব্যায়াম বা ব্যান্ড ব্যায়াম সহায়তা করতে পারে।</p>
+  </section>
 
-<!---  Banner Section Start --->
-    <div class="banner">
-        <h1>আপনার মানসিক স্বাস্থ্যের বন্ধু</h1>
-        <p>আপনার স্বাস্থ্য সম্পর্কিত সমস্ত প্রয়োজনীয়তা একটি অ্যাপে</p>
+  <!-- ================= Exercise Tracker ================= -->
+  <section>
+    <h2>ব্যায়াম ট্র্যাকার 🏃‍♂️</h2>
+    <form id="exerciseForm">
+      <label>ব্যায়ামের ধরন:</label>
+      <select id="exerciseType">
+        <option value="walk">হাঁটা 🚶‍♂️</option>
+        <option value="run">দৌড় 🏃‍♀️</option>
+        <option value="yoga">যোগব্যায়াম 🧘‍♂️</option>
+        <option value="gym">জিম 🏋️‍♂️</option>
+      </select>
+
+      <label>সময় (মিনিটে) ⏱️:</label>
+      <input type="number" id="duration" placeholder="মিনিটে লিখুন" min="1">
+
+      <label>ওজন (kg) ⚖️:</label>
+      <input type="number" id="weight" placeholder="আপনার ওজন লিখুন" min="1">
+
+      <button type="button" onclick="calculateCalories()">ক্যালোরি হিসাব করুন 🔥</button>
+    </form>
+
+    <div class="tracker" id="trackerResult">
+      <div>আপনি এখনো কোনো হিসাব করেননি।</div>
     </div>
-<!---  Banner Section End --->
+  </section>
 
-<!---  Home Section Start --->
-<section id="home">
-    <div class="home">
-        <h2><b>🩺 আমাদের সম্পর্কে</b></h2><hr>
-        <p><i>
+  <!-- ================= Simple Questions ================= -->
+  <section>
+    <h2>ছোট প্রশ্নাবলী ❓</h2>
+    <form>
+      <label>আজকের ব্যায়াম কত মিনিট করেছেন?</label>
+      <input type="number" placeholder="মিনিট লিখুন">
 
-আমাদের লক্ষ্য হলো মানুষের দোরগোড়ায় সহজলভ্য ও নির্ভরযোগ্য স্বাস্থ্যসেবা পৌঁছে দেওয়া।
-আমরা বিশ্বাস করি, প্রতিটি মানুষ মানসম্মত চিকিৎসা ও স্বাস্থ্যপরামর্শ পাওয়ার অধিকার রাখে।
-আমাদের বিশেষজ্ঞ ডাক্তার ও স্বাস্থ্যকর্মীদের দল প্রতিদিন আন্তরিকভাবে কাজ করছে জনগণের স্বাস্থ্যসেবা আরও উন্নত করতে।
-আপনাদের সুস্থ ও সুন্দর জীবনের সহযাত্রী হতে পারাই আমাদের সবচেয়ে বড় অর্জন।</i></p>
-    </div>
-</section>
-  <main>
-    <section class="categories">
-      <h2>স্বাস্থ্য বিষয়ক বিভাগ</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="emoji">🧠</div>
-          <h3><a href="point1.html">মানসিক স্বাস্থ্য</a></h3>
-          <p>মনের সুস্থতা চেক করুন</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🥗</div>
-          <h3><a href="point2.html">ডায়েট ও পুষ্টি</a></h3>
-          <p>সুষম খাবারের পরামর্শ</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🏋‍♂</div>
-          <h3><a href="point3.html">নিয়মিত ব্যায়াম</a></h3>
-          <p>দৈনন্দিন শারীরিক কার্যক্রম</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🤰</div>
-          <h3><a href="point4.html">মাতৃ ও শিশু স্বাস্থ্য</a></h3>
-          <p>গর্ভকালীন যত্ন ও টিকা</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🚨</div>
-          <h3><a href="point5.html">জরুরি সাহায্য</a></h3>
-          <p>অ্যাম্বুলেন্স ও জরুরি পরামর্শ</p>
-        </div>
-        <div class="card">
-          <div class="emoji">💉</div>
-          <h3><a href="point6.html">টিকা সময়সূচি</a></h3>
-          <p>টিকা এবং রোগ প্রতিরোধ</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🩺</div>
-          <h3><a href="point7.html">চেক-আপ</a></h3>
-          <p>স্বাস্থ্য পরীক্ষা ও পরামর্শ</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🧼</div>
-          <h3><a href="point8.html">হাইজিন</a></h3>
-          <p>পরিচ্ছন্নতা ও রোগ প্রতিরোধ</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🚭</div>
-          <h3><a href="point9.html">মাদক/ধূমপান প্রতিরোধ</a></h3>
-          <p>স্বাস্থ্যকর জীবনধারা</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🏥</div>
-          <h3><a href="point10.html">কমিউনিটি স্বাস্থ্য</a></h3>
-          <p>স্থানীয় স্বাস্থ্য সংক্রান্ত তথ্য</p>
-        </div>
-      </div>
-    </section>
-    <section class="map-link">
-      <h2>🗺 কমিউনিটি হেলথ ম্যাপ</h2>
-      <p>ক্লিনিক, হাসপাতাল, ফার্মেসি খুঁজুন সহজেই</p>
-      <a href="map.html" class="btn">ম্যাপ দেখুন</a>
-    </section>
-  </main>
+      <label>আজ কি আপনি জল পর্যাপ্ত পরিমাণে পান করেছেন? 💧</label>
+      <select>
+        <option>হ্যাঁ ✅</option>
+        <option>না ❌</option>
+      </select>
 
-  <footer>
-    <p>© ২০২৫ স্বাস্থ্যসেবা - সর্বস্বত্ব সংরক্ষিত</p>
-  </footer>
+      <label>আজ আপনার শরীরের অবস্থা কেমন?</label>
+      <textarea rows="2" placeholder="আপনার অনুভূতি লিখুন..."></textarea>
+
+      <button type="submit">জমা দিন 📤</button>
+    </form>
+  </section>
+
+</main>
+
+
+<script>
+function calculateCalories() {
+  const type = document.getElementById('exerciseType').value;
+  const duration = parseInt(document.getElementById('duration').value) || 0;
+  const weight = parseInt(document.getElementById('weight').value) || 0;
+
+  // ক্যালোরি হিসাব (প্রায়জন্য সূত্র)
+  let calPerMin = 0;
+  if(type === 'walk') calPerMin = 3.5;
+  if(type === 'run') calPerMin = 7;
+  if(type === 'yoga') calPerMin = 2.5;
+  if(type === 'gym') calPerMin = 6;
+
+  const calories = ((calPerMin * weight) / 60) * duration;
+
+  document.getElementById('trackerResult').innerHTML = `
+    <div>💪 ব্যায়ামের ধরন: ${type}</div>
+    <div>⏱️ সময়: ${duration} মিনিট</div>
+    <div>⚖️ ওজন: ${weight} কেজি</div>
+    <div>🔥 প্রায় ক্যালোরি খরচ: ${calories.toFixed(1)} kcal</div>
+  `;
+}
+</script>
+
 </body>
 </html>
