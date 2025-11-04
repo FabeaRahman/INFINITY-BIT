@@ -98,6 +98,8 @@ main {
     margin: auto;
 
 }
+
+
 /* Category cards */
 .cards {
   display: grid;
@@ -186,6 +188,49 @@ main {
             font-size: 18px;
             color: red;
         }
+
+.emergency-section {
+    background: #fff9e6;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.emergency-section h2 {
+    color: #ff9800;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.emergency-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.emergency-btn {
+    background: #ff9800;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.emergency-btn:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+.help {
+  background-color: #e0f7fa; /* হালকা আকাশি রঙ */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
 
 /* Map placeholder */
