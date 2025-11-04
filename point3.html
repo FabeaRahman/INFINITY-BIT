@@ -45,7 +45,7 @@
 
   <!-- ================= Exercise Tracker ================= -->
   <section>
-    <h2>ব্যায়াম ট্র্যাকার 🏃‍♂️</h2>
+    <h2>ব্যায়াম ট্র্যাকার </h2>
     <form id="exerciseForm">
       <label>ব্যায়ামের ধরন:</label>
       <select id="exerciseType">
@@ -58,10 +58,10 @@
       <label>সময় (মিনিটে) ⏱️:</label>
       <input type="number" id="duration" placeholder="মিনিটে লিখুন" min="1">
 
-      <label>ওজন (kg) ⚖️:</label>
+      <label>ওজন (kg) :</label>
       <input type="number" id="weight" placeholder="আপনার ওজন লিখুন" min="1">
 
-      <button type="button" onclick="calculateCalories()">ক্যালোরি হিসাব করুন 🔥</button>
+      <button type="button" onclick="calculateCalories()">ক্যালোরি হিসাব করুন </button>
     </form>
 
     <div class="tracker" id="trackerResult">
@@ -71,7 +71,7 @@
 
   <!-- ================= Simple Questions ================= -->
   <section>
-    <h2>ছোট প্রশ্নাবলী ❓</h2>
+    <h2>ছোট প্রশ্নাবলী ?</h2>
     <form>
       <label>আজকের ব্যায়াম কত মিনিট করেছেন?</label>
       <input type="number" placeholder="মিনিট লিখুন">
@@ -108,10 +108,10 @@ function calculateCalories() {
   const calories = ((calPerMin * weight) / 60) * duration;
 
   document.getElementById('trackerResult').innerHTML = `
-    <div>💪 ব্যায়ামের ধরন: ${type}</div>
-    <div>⏱️ সময়: ${duration} মিনিট</div>
-    <div>⚖️ ওজন: ${weight} কেজি</div>
-    <div>🔥 প্রায় ক্যালোরি খরচ: ${calories.toFixed(1)} kcal</div>
+    <div>ব্যায়ামের ধরন: ${type}</div>
+    <div> সময়: ${duration} মিনিট</div>
+    <div>ওজন: ${weight} কেজি</div>
+    <div> প্রায় ক্যালোরি খরচ: ${calories.toFixed(1)} kcal</div>
   `;
 }
 </script>
